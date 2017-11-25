@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>keycloak-demo-app</title>
+    </head>
+    <body>
+        <h1>keycloak-sample-app</h1>
+        <a th:href="@{/products}">My products</a>
+        <br/><br/>
+        <a th:href="@{/simple}">Simple anonymous page</a>
+        <br/><br/>
+        <div th:if="${@securityUtil.isUserLoggedIn()}">
+            Username: <span th:text="${@securityUtil.getUsername()}">Username</span>
+            <br/>
+            <br/>
+            <a th:href="@{/logout}">Logout</a>
+        </div>
+    </body>
+</html>

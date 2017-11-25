@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>This page allows anonymous access</title>
+</head>
+    <body>
+        <h2 th:text="${'Hello '+ principal}"></h2>
+        <p>
+            <a th:href="@{/}">Index page</a>
+        </p>
+        <ul th:each="authority : ${authorities}">
+            <li th:text="${authority}"></li>
+        </ul>
+    </body>
+</html>

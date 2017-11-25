@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Products</title>
+</head>
+    <body>
+        <h2 th:text="${'Hello '+ principal.getName()}"></h2>
+        <ul th:each="product : ${products}">
+            <li th:text="${product}"></li>
+        </ul>
+        <p>
+            <a th:href="@{/logout}">Logout</a>
+        </p>
+        <p>
+            <a th:href="@{/}">Index page</a>
+        </p>
+        <p>These are the customer numbers of the user: <span th:text="${customerNumbers}"></span></p>
+        <p>These are the authorities of the user:</p>
+        <ul th:each="authority : ${authorities}">
+            <li th:text="${authority}"></li>
+        </ul>
+    </body>
+</html>
