@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
-        <title>keycloak-demo-app</title>
+        <title th:text="${applicationName}"></title>
     </head>
     <body>
-        <h1>keycloak-sample-app</h1>
+        <h1 th:text="${applicationName}"></h1>
         <a th:href="@{/products}">My products</a>
         <br/><br/>
         <a th:href="@{/simple}">Simple anonymous page</a>

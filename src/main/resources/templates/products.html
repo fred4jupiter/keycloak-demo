@@ -4,6 +4,7 @@
     <title>Products</title>
 </head>
     <body>
+    	<h1>Secured products page</h1>
         <h2 th:text="${'Hello '+ principal.getName()}"></h2>
         <ul th:each="product : ${products}">
             <li th:text="${product}"></li>
@@ -14,7 +15,6 @@
         <p>
             <a th:href="@{/}">Index page</a>
         </p>
-        <p>These are the customer numbers of the user: <span th:text="${customerNumbers}"></span></p>
         <p>These are the authorities of the user:</p>
         <ul th:each="authority : ${authorities}">
             <li th:text="${authority}"></li>
