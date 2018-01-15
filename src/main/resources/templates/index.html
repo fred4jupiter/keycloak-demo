@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
-        <title th:text="${applicationName}"></title>
+        <title th:text="${@webUtil.getApplicationName()}"></title>
     </head>
     <body>
-        <h1 th:text="${applicationName}"></h1>
+        <h1 th:text="${@webUtil.getApplicationName()}"></h1>
         <a th:href="@{/products}">My products</a>
         <br/><br/>
         <a th:href="@{/simple}">Simple anonymous page</a>
