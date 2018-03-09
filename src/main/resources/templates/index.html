@@ -1,19 +1,14 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <title th:text="${@webUtil.getApplicationName()}"></title>
-    </head>
-    <body>
-        <h1 th:text="${@webUtil.getApplicationName()}"></h1>
-        <a th:href="@{/products}">My products</a>
-        <br/><br/>
-        <a th:href="@{/simple}">Simple anonymous page</a>
-        <br/><br/>
-        <div th:if="${@securityUtil.isUserLoggedIn()}">
-            Username: <span th:text="${@securityUtil.getUsername()}">Username</span>
-            <br/>
-            <br/>
-            <a th:href="@{/logout}">Logout</a>
-        </div>
-    </body>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3" layout:decorator="_layout">
+<head>
+    <title th:text="${@webUtil.getApplicationName()}"></title>
+</head>
+<body>
+<div layout:fragment="content" class="container">
+    <div th:replace="fragments/alert :: alert_headline"></div>
+
+    <h1 th:text="${@webUtil.getApplicationName()}"></h1>
+</div>
+</body>
 </html>

@@ -1,15 +1,19 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3" layout:decorator="_layout">
 <head>
-    <title>This page allows anonymous access</title>
+    <title>Anonymous Page</title>
 </head>
-    <body>
-        <h2 th:text="${'Hello '+ principal}"></h2>
-        <p>
-            <a th:href="@{/}">Index page</a>
-        </p>
-        <ul th:each="authority : ${authorities}">
-            <li th:text="${authority}"></li>
-        </ul>
-    </body>
+<body>
+<div layout:fragment="content" class="container">
+    <div th:replace="fragments/alert :: alert_headline"></div>
+
+    <h2 sec:authorize="isAuthenticated()" th:text="${'Hello '+ principal}"></h2>
+
+    <p>These are the authorities of the user:</p>
+    <ul class="list-group" th:each="authority : ${authorities}">
+        <li class="list-group-item" th:text="${authority}"></li>
+    </ul>
+</div>
+</body>
 </html>
