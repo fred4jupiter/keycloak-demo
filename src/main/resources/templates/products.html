@@ -16,8 +16,8 @@
             <a th:href="@{/}">Index page</a>
         </p>
         <p>These are the authorities of the user:</p>
-        <ul th:each="authority : ${authorities}">
-            <li th:text="${authority}"></li>
+        <ul class="list-group" th:each="authority : ${authorities}">
+            <li class="list-group-item" th:text="${authority}"></li>
         </ul>
     </body>
 </html>
