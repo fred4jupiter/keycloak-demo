@@ -15,24 +15,24 @@ import org.springframework.stereotype.Component;
 @Component
 public class SecurityUtil {
 
-	private static final Logger LOG = LoggerFactory.getLogger(SecurityUtil.class);
+    private static final Logger LOG = LoggerFactory.getLogger(SecurityUtil.class);
 
-	public boolean isUserLoggedIn() {
-		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-		LOG.debug("authentication: {}", authentication);
-		return authentication != null && authentication.isAuthenticated()
-				&& !(authentication instanceof AnonymousAuthenticationToken);
-	}
+    public boolean isUserLoggedIn() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        LOG.debug("authentication: {}", authentication);
+        return authentication != null && authentication.isAuthenticated()
+                && !(authentication instanceof AnonymousAuthenticationToken);
+    }
 
-	public String getUsername() {
-		return SecurityContextHolder.getContext().getAuthentication().getName();
-	}
+    public String getUsername() {
+        return SecurityContextHolder.getContext().getAuthentication().getName();
+    }
 
-	public Set<String> getUserAuthorities() {
-		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-		if (authentication == null) {
-			return Collections.emptySet();
-		}
-		return authentication.getAuthorities().stream().map(GrantedAuthority::getAuthority).collect(Collectors.toSet());
-	}
+    public Set<String> getUserAuthorities() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (authentication == null) {
+            return Collections.emptySet();
+        }
+        return authentication.getAuthorities().stream().map(GrantedAuthority::getAuthority).collect(Collectors.toSet());
+    }
 }
