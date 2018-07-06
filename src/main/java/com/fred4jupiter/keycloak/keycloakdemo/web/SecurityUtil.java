@@ -35,4 +35,8 @@ public class SecurityUtil {
         }
         return authentication.getAuthorities().stream().map(GrantedAuthority::getAuthority).collect(Collectors.toSet());
     }
+
+    public boolean isUserInRole(String role) {
+        return getUserAuthorities().contains(role);
+    }
 }

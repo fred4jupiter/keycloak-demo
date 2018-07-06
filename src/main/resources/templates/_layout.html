@@ -4,7 +4,7 @@
 		<meta charset="utf-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<title layout:title-pattern="$DECORATOR_TITLE - $CONTENT_TITLE"></title>
+		<title layout:title-pattern="$LAYOUT_TITLE - $CONTENT_TITLE"></title>
 
 		<link rel="stylesheet" th:href="@{/webjars/font-awesome/4.7.0/css/font-awesome.min.css}" />
 		<link rel="stylesheet" th:href="@{/webjars/bootstrap/3.3.6/css/bootstrap.min.css}" />		
@@ -12,7 +12,7 @@
 		<link rel="stylesheet" th:href="@{/css/custom.css}" />		
 	</head>
 	<body>
-		<nav th:include="_navigation :: menu" class="navbar navbar-fixed-top" th:classappend="${@webUtil.isAppOne() ? 'navbar-inverse' : 'navbar-default'}"></nav>
+		<nav th:include="~{_navigation :: menu}" class="navbar navbar-fixed-top" th:classappend="${@webUtil.isAppOne() ? 'navbar-inverse' : 'navbar-default'}"></nav>
 		<div class="container" role="main">		
 			<div layout:fragment="content" class="container" role="main" style="padding-top: 70px;">Content Placeholder</div>
 		</div>

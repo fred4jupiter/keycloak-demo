@@ -1,5 +1,5 @@
 # keycloak-demo
-Spring Boot Keycloak demo application using Keycloak 4.0.0.
+Spring Boot Keycloak demo application using Keycloak 4.0.0 with Spring Boot 2.0.3.
 
 ## Setup Keycloak
 
