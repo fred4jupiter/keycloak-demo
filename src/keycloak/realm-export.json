@@ -384,7 +384,7 @@
       "clientAuthenticatorType": "client-secret",
       "secret": "**********",
       "redirectUris": [
-        "*"
+        "http://localhost:8081/*"
       ],
       "webOrigins": [],
       "notBefore": 0,
@@ -434,7 +434,7 @@
       "clientAuthenticatorType": "client-secret",
       "secret": "**********",
       "redirectUris": [
-        "*"
+        "http://localhost:8082/*"
       ],
       "webOrigins": [],
       "notBefore": 0,
@@ -1039,6 +1039,7 @@
     "from": "keycloak@local.de",
     "ssl": ""
   },
+  "loginTheme": "showcase",
   "eventsEnabled": false,
   "eventsListeners": [
     "jboss-logging"
@@ -1191,7 +1192,9 @@
     ]
   },
   "internationalizationEnabled": false,
-  "supportedLocales": [],
+  "supportedLocales": [
+    ""
+  ],
   "authenticationFlows": [
     {
       "id": "af8c99b3-f65a-4a2a-b483-b08831ad8cda",
