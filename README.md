@@ -1,16 +1,17 @@
 # keycloak-demo
-Spring Boot Keycloak demo application.
+Spring Boot Keycloak demo application using Keycloak 4.0.0.
 
 ## Setup Keycloak
 
 You have to configure two clients in Keycloak. Both clients are configured equally:
 
-- create client `keycloak-demo` and `keycloak-demo2`
+- create realm: `showcase`
+- create client `keycloak-demo1` and `keycloak-demo2`
 - Access Type: confidential
 - Standard Flow enabled
 - Redirect URL: *
 - create credential for each one and configure it in `application.properties` and `application-app2.properties`
-- define a role `PERM_PRODUCTS`
+- define a role `ROLE_PRODUCTS`
 - create a user with this role assigned
 
 ## How to run the showcase?
