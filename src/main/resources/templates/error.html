@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout" layout:decorate="~{_layout}">
+<head>
+    <title>Error Page</title>
+</head>
+<body>
+<div layout:fragment="content" class="container">
+    <div th:replace="fragments/alert :: alert_headline"></div>
+
+    <div class="alert alert-danger">
+        <strong>Oops ... something went wrong!</strong>
+    </div>
+
+    <table class="table">
+        <tr>
+            <td>Date</td>
+            <td th:text="${timestamp}"/>
+        </tr>
+        <tr>
+            <td>Path</td>
+            <td th:text="${path}"/>
+        </tr>
+        <tr>
+            <td>Error</td>
+            <td th:text="${error}"/>
+        </tr>
+        <tr>
+            <td>Status</td>
+            <td th:text="${status}"/>
+        </tr>
+        <tr>
+            <td>Message</td>
+            <td th:text="${message}"/>
+        </tr>
+        <tr>
+            <td>Exception</td>
+            <td th:text="${exception}"/>
+        </tr>
+        <tr>
+            <td>Trace</td>
+            <td>
+                <pre th:text="${trace}"/>
+            </td>
+        </tr>
+    </table>
+    <br/>
+    <br/>
+    <a href="/" class="btn btn-info">
+        <span class="glyphicon glyphicon-home"></span> Go Home
+    </a>
+</div>
+</body>
+</html>
