@@ -12,7 +12,7 @@ located in `/src/keycloak/realm-export.json`.
 - Standard Flow enabled
 - Redirect URL: `http://localhost:8081/*` bzw. `http://localhost:8082/*` 
 - create credential for each one and configure it in `application.properties` and `application-app2.properties`
-- define a role `ROLE_PRODUCTS`
+- define a role `ROLE_PRODUCTS` in each client
 - create a user with this role assigned
 
 ## Setup applications
@@ -23,6 +23,13 @@ Customize the settings in `application.properties` and `application-app2.propert
 - resource (clientId)
 - auth-server-url
 - secret
+
+## Custom Theme
+
+In the directory `src/keycloak/theme` you can find the `showcase` theme. Copy the `showcase` folder into 
+the `KEYCLOAK_HOME/theme` folder.
+
+To use the theme select the showcase theme under `Realm Settings -> Themes -> Login Theme -> showcase`.
 
 ## How to run the showcase?
 
