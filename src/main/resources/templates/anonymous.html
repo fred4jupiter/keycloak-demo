@@ -9,6 +9,8 @@
 
     <h2 th:if="${@securityUtil.isUserLoggedIn()}" th:text="${'Hello '+ @securityUtil.getUsername()}"></h2>
 
+    <p th:if="${@securityUtil.isUserLoggedIn()}" th:text="${'You are: '+ name}"></p>
+
     <p>These are the authorities of the user:</p>
     <ul class="list-group" th:each="authority : ${authorities}">
         <li class="list-group-item" th:text="${authority}"></li>

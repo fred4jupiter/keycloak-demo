@@ -19,6 +19,7 @@ public class AnonymousController {
 		Set<String> authorities = securityUtil.getUserAuthorities();
 		model.addAttribute("authorities", authorities);
 		model.addAttribute("principal", principal != null ? principal.getName() : "n.A.");
+		model.addAttribute("name", securityUtil.getFirstNameWithLastName());
 
 		return "anonymous";
 	}

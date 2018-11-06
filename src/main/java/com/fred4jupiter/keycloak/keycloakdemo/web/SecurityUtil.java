@@ -1,5 +1,7 @@
 package com.fred4jupiter.keycloak.keycloakdemo.web;
 
+import org.keycloak.adapters.springsecurity.token.KeycloakAuthenticationToken;
+import org.keycloak.representations.IDToken;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
@@ -33,5 +35,15 @@ public class SecurityUtil {
 
     public boolean isUserInRole(String role) {
         return getUserAuthorities().contains(role);
+    }
+
+    public String getFirstNameWithLastName() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (authentication instanceof KeycloakAuthenticationToken) {
+            KeycloakAuthenticationToken keycloakAuthenticationToken = (KeycloakAuthenticationToken) authentication;
+            IDToken idToken = keycloakAuthenticationToken.getAccount().getKeycloakSecurityContext().getIdToken();
+            return idToken.getName();
+        }
+        return null;
     }
 }
