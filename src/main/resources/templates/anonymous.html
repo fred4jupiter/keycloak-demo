@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
-      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3" layout:decorate="~{_layout}">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout" layout:decorate="~{_layout}">
 <head>
     <title>Anonymous Page</title>
 </head>
@@ -8,7 +7,7 @@
 <div layout:fragment="content" class="container">
     <div th:replace="fragments/alert :: alert_headline"></div>
 
-    <h2 sec:authorize="isAuthenticated()" th:text="${'Hello '+ principal}"></h2>
+    <h2 th:if="${@securityUtil.isUserLoggedIn()}" th:text="${'Hello '+ @securityUtil.getUsername()}"></h2>
 
     <p>These are the authorities of the user:</p>
     <ul class="list-group" th:each="authority : ${authorities}">

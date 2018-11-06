@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
-      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3" layout:decorate="~{_layout}">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout" layout:decorate="~{_layout}">
 <head>
     <title>Products</title>
 </head>
@@ -9,7 +8,7 @@
     <div th:replace="fragments/alert :: alert_headline"></div>
 
     <h1>Secured products page</h1>
-    <h2 th:text="${'Hello '+ principal.getName()}"></h2>
+    <h2 th:text="${'Hello '+ @securityUtil.getUsername()}"></h2>
     <ul class="list-group" th:each="product : ${products}">
         <li class="list-group-item" th:text="${product}"></li>
     </ul>

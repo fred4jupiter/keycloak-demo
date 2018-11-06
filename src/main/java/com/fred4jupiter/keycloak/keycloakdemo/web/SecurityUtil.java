@@ -1,25 +1,20 @@
 package com.fred4jupiter.keycloak.keycloakdemo.web;
 
-import java.util.Collections;
-import java.util.Set;
-import java.util.stream.Collectors;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 
+import java.util.Collections;
+import java.util.Set;
+import java.util.stream.Collectors;
+
 @Component
 public class SecurityUtil {
 
-    private static final Logger LOG = LoggerFactory.getLogger(SecurityUtil.class);
-
     public boolean isUserLoggedIn() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        LOG.debug("authentication: {}", authentication);
         return authentication != null && authentication.isAuthenticated()
                 && !(authentication instanceof AnonymousAuthenticationToken);
     }
