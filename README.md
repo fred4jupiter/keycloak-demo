@@ -1,5 +1,5 @@
 # keycloak-demo
-Spring Boot Keycloak demo application using Keycloak 4.5.0 with Spring Boot 2.0.6.
+Spring Boot Keycloak demo application using Keycloak 5.0.0 with Spring Boot 2.1.4.
 
 ## Setup Keycloak
 
@@ -14,6 +14,8 @@ located in `/src/keycloak/realm-export.json`.
 - create credential for each one and configure it in `application.properties` and `application-app2.properties`
 - define a role `ROLE_PRODUCTS` in each client
 - create a user with this role assigned
+- NOTE: with Keycloak 5 you also have to select the client scopes so that the roles will
+  be mapped (see Clients -> select you client -> Client Scopes -> Assign 'roles')
 
 ## Setup applications
 
