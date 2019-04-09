@@ -17,6 +17,8 @@ located in `/src/keycloak/realm-export.json`.
 - NOTE: with Keycloak 5 you also have to select the client scopes so that the roles will
   be mapped (see Clients -> select you client -> Client Scopes -> Assign 'roles')
 
+![Assign Roles](src/docs/screenshot/assign_roles.jpg?raw=true "Assign Roles")
+
 ## Setup applications
 
 Customize the settings in `application.properties` and `application-app2.properties` for your needs:
