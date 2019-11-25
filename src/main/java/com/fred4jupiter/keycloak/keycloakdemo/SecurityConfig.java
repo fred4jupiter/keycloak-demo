@@ -1,6 +1,7 @@
 package com.fred4jupiter.keycloak.keycloakdemo;
 
 import org.keycloak.adapters.AdapterDeploymentContext;
+import org.keycloak.adapters.KeycloakConfigResolver;
 import org.keycloak.adapters.springboot.KeycloakSpringBootConfigResolver;
 import org.keycloak.adapters.springsecurity.AdapterDeploymentContextFactoryBean;
 import org.keycloak.adapters.springsecurity.KeycloakConfiguration;
@@ -64,13 +65,15 @@ public class SecurityConfig extends KeycloakWebSecurityConfigurerAdapter {
         return new HttpSessionManager();
     }
 
-    @Bean
-    @Override
-    protected AdapterDeploymentContext adapterDeploymentContext() throws Exception {
-        AdapterDeploymentContextFactoryBean factoryBean = new AdapterDeploymentContextFactoryBean(new KeycloakSpringBootConfigResolver());
-        factoryBean.afterPropertiesSet();
-        return factoryBean.getObject();
-    }
+
+
+//    @Bean
+//    @Override
+//    protected AdapterDeploymentContext adapterDeploymentContext() throws Exception {
+//        AdapterDeploymentContextFactoryBean factoryBean = new AdapterDeploymentContextFactoryBean(new KeycloakSpringBootConfigResolver());
+//        factoryBean.afterPropertiesSet();
+//        return factoryBean.getObject();
+//    }
 
     /**
      * Registers the KeycloakAuthenticationProvider with the authentication manager.
