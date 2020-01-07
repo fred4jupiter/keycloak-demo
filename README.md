@@ -10,11 +10,14 @@ located in `/src/keycloak/realm-export.json`.
 - create client `keycloak-demo1` and `keycloak-demo2`
 - Access Type: confidential
 - Standard Flow enabled
-- Redirect URL: `http://localhost:8081/*` bzw. `http://localhost:8082/*` 
+- Valid Redirect URIs:
+  - keycloak-demo1: `http://localhost:8081/*`
+  - keycloak-demo2: `http://localhost:8082/*`  
 - create credential for each one and configure it in `application.properties` and `application-app2.properties`
 - define a role `ROLE_PRODUCTS` in each client
 - create a user with this role assigned
-- NOTE: with Keycloak 5 you also have to select the client scopes so that the roles will
+
+NOTE: Check if `roles` is assigned under the client scopes so that the roles will
   be mapped (see Clients -> select you client -> Client Scopes -> Assign 'roles')
 
 ![Assign Roles](src/docs/screenshot/assign_roles.jpg?raw=true "Assign Roles")
